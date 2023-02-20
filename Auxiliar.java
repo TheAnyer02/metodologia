@@ -16,7 +16,10 @@ public class Auxiliar {
 *
 * Description of the Method: It prints on the screen the histogram of a picture
 * 
-* *********************************************************************/
+* *La complejidad teórica de este método es de O(n), donde "n" es la longitud del arreglo de entrada "Histograma". 
+	 *Esto se debe a que el método simplemente recorre el arreglo e imprime cada elemento en la consola, lo cual tiene una complejidad de tiempo constante O(1) 
+	 *para cada iteración del ciclo. Como el número de iteraciones del ciclo es igual a la longitud del arreglo, la complejidad total del método es O(n).
+	 */
     
     
 	public static void ImprimeHistograma(int[] Histograma) {
@@ -25,11 +28,13 @@ public class Auxiliar {
 		System.out.println();
 	}
 
+
 /**********************************************************************
 * Method name: getGrayScale
 *
 * Description of the Method: It computes the grey value of a rgb pixel
-* 
+* La complejidad teórica de este método es de O(1), lo cual significa que la cantidad de operaciones que realiza el método es constante y 
+* no depende del tamaño de los datos de entrada.
 * *********************************************************************/
          
 	private static int  getGrayScale(int rgb) {
@@ -46,7 +51,11 @@ public class Auxiliar {
 *
 * Description of the Method: It computes the histograma of a picture. An image histogram is a 
 * distribution showing the frequency of appeareance of each gray-level value.
-* 
+* Se recorre cada píxel de la imagen y se incrementa la frecuencia del valor de intensidad correspondiente en el arreglo de histograma. 
+* Este proceso de recorrer cada píxel y actualizar el histograma tiene una complejidad de O(n), donde "n" es el número total de píxeles en la imagen. 
+* Dentro del ciclo interno, se llama a la función getGrayScale(), que tiene una complejidad teórica constante O(1) para cada iteración.
+
+Por lo tanto, la complejidad total del método es O(n).
 * *********************************************************************/       
 
 
@@ -77,6 +86,18 @@ public class Auxiliar {
 * Description of the Method: It transforms a RGB picture into a grayscale one. The new image is stored in
 * a file. 
 * 
+* El método comienza leyendo la imagen de entrada desde un archivo y extrayendo sus dimensiones (anchura y altura), 
+* lo cual tiene una complejidad de tiempo constante O(1). Luego, se recorre cada píxel de la imagen y se convierte su valor RGB a escala de grises.
+
+Dentro del ciclo interno, se llama a la función getGrayScale(), que tiene una complejidad teórica constante O(1) para cada iteración. Luego, 
+se realiza un bucle que repite 4 veces, que tiene una complejidad de tiempo constante O(1) en cada iteración, ya que solo se realizan operaciones bit a bit y 
+asignaciones. En total, el tiempo de ejecución para cada píxel es constante.
+
+Dentro del bucle interno, se modifica el valor RGB del píxel en la imagen de entrada para que se represente en escala de grises. Este proceso también 
+tiene una complejidad de tiempo constante O(1) para cada píxel. Finalmente, la imagen en escala de grises se guarda en un archivo de salida, lo que también 
+tiene una complejidad de tiempo constante O(1).
+
+Por lo tanto, la complejidad total del método es O(n).
 * *********************************************************************/       
 
         
@@ -115,6 +136,11 @@ public class Auxiliar {
 * it sorts the gray levels of every pixel in a column of the image in ascending order.
 * Finally, the new image with the sorted columns is stored in a file. 
 * 
+* 
+*  Depende del método de ordenación utilizado. Si se utiliza el método de la burbuja (Metodo=0), la complejidad sería O(n^3), 
+*  ya que se tienen tres ciclos anidados. Si se utiliza el método quicksort (Metodo=1), la complejidad sería O(n^2log(n)),
+*  ya que se tienen dos ciclos anidados y se utiliza el método quicksort para ordenar cada fila de la matriz. 
+*  En ambos casos, la complejidad del método aumenta en función del tamaño de la imagen (xy).
 * *********************************************************************/       
 
         
